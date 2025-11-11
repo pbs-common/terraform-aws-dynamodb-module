@@ -33,7 +33,7 @@ variable "repo" {
 }
 
 variable "owner" {
-  description = "Tag used to group resources according to product"
+  description = "Tag used to indicate resource/project owner"
 
   default = "plops"
 
