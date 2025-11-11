@@ -7,7 +7,7 @@
 Use this URL for the source of the module. See the usage examples below for more details.
 
 ```hcl
-github.com/pbs/terraform-aws-dynamodb-module?ref=0.1.27
+github.com/pbs/terraform-aws-dynamodb-module?ref=x.y.z
 ```
 
 ### Alternative Installation Methods
@@ -26,7 +26,7 @@ Integrate this module like so:
 
 ```hcl
 module "dynamodb" {
-  source = "github.com/pbs/terraform-aws-dynamodb-module?ref=0.1.27"
+  source = "github.com/pbs/terraform-aws-dynamodb-module?ref=x.y.z"
 
   # Tagging Parameters
   organization = var.organization
@@ -42,7 +42,7 @@ module "dynamodb" {
 
 If this repo is added as a subtree, then the version of the module should be close to the version shown here:
 
-`0.1.27`
+`x.y.z`
 
 Note, however that subtrees can be altered as desired within repositories.
 
@@ -58,14 +58,14 @@ Below is automatically generated documentation on this Terraform module using [t
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3.2 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.5.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.13.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 6.0.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.24.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 6.20.0 |
 
 ## Modules
 
@@ -88,13 +88,14 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment (sharedtools, dev, staging, qa, prod) | `string` | n/a | yes |
 | <a name="input_organization"></a> [organization](#input\_organization) | Organization using this module. Used to prefix tags so that they are easily identified as being from your organization | `string` | n/a | yes |
+| <a name="input_owner"></a> [owner](#input\_owner) | Tag used to group resources according to product | `string` | n/a | yes |
 | <a name="input_product"></a> [product](#input\_product) | Tag used to group resources according to product | `string` | n/a | yes |
 | <a name="input_repo"></a> [repo](#input\_repo) | Tag used to point to the repo using this module | `string` | n/a | yes |
 | <a name="input_additional_attributes"></a> [additional\_attributes](#input\_additional\_attributes) | List of map of additional attributes. Necessary for global secondary indices | `list(map(any))` | `[]` | no |
 | <a name="input_billing_mode"></a> [billing\_mode](#input\_billing\_mode) | Billing mode for table | `string` | `"PAY_PER_REQUEST"` | no |
 | <a name="input_enable_point_in_time_recovery"></a> [enable\_point\_in\_time\_recovery](#input\_enable\_point\_in\_time\_recovery) | Enable point in time recovery | `bool` | `true` | no |
 | <a name="input_global_secondary_indices"></a> [global\_secondary\_indices](#input\_global\_secondary\_indices) | Map of global secondary indices | `map(any)` | `{}` | no |
-| <a name="input_hash_key"></a> [hash\_key](#input\_hash\_key) | DynamoDB Table Hash Key | `map(any)` | <pre>{<br>  "name": "id",<br>  "type": "S"<br>}</pre> | no |
+| <a name="input_hash_key"></a> [hash\_key](#input\_hash\_key) | DynamoDB Table Hash Key | `map(any)` | <pre>{<br/>  "name": "id",<br/>  "type": "S"<br/>}</pre> | no |
 | <a name="input_local_secondary_indices"></a> [local\_secondary\_indices](#input\_local\_secondary\_indices) | Map of local secondary indices | `map(any)` | `{}` | no |
 | <a name="input_max_capacity"></a> [max\_capacity](#input\_max\_capacity) | Maximum capacity for the database | `number` | `20` | no |
 | <a name="input_min_capacity"></a> [min\_capacity](#input\_min\_capacity) | Minimum capacity for the database | `number` | `5` | no |
